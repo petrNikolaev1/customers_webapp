@@ -1,0 +1,117 @@
+@import "index.scss";
+
+.home {
+  $horPadding: 2vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  width: 80vw;
+
+  margin: 5vh auto;
+
+  background: white;
+
+  &-map {
+    flex-shrink: 0;
+    height: 67vh;
+    width: 80vw;
+  }
+
+  &-title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    &-label {
+      color: rgb(153, 153, 153);
+      font-size: 3vw;
+      font-weight: 600;
+    }
+
+    padding: 1vw $horPadding;
+  }
+
+  &-back {
+    text-decoration: none;
+
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18vw;
+    height: 4vw;
+    background: $dooglysColor;
+
+    transition: 0.5s ease-out;
+
+    &:hover {
+      background: darken($dooglysColor, 10%);
+    }
+
+    svg {
+      margin-right: 1vw;
+      font-size: 2.5vw;
+    }
+  }
+
+  &-block {
+    display: flex;
+    flex-flow: column nowrap;
+
+    border-top: 0.1vw solid $closeColor;
+
+    &-title {
+      padding: 0 $horPadding;
+      flex-basis: 5vw;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      &-label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-select {
+        flex-basis: 40%;
+      }
+
+      &-expand {
+        &-container {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-end;
+          align-items: center;
+          flex-basis: 10%;
+        }
+
+        fill: $closeColor !important;
+        font-size: 4vw !important;
+        cursor: pointer;
+        transition: fill 0.5s ease-in, transform 0.2s ease-in !important;
+
+        &:hover {
+          fill: darken($closeColor, 10%) !important;
+        }
+      }
+    }
+
+    &-info {
+      //background: darken(white, 2%);
+
+      padding: 1vw $horPadding;
+      border-top: 0.05vw solid $closeColor;
+
+      display: flex;
+      flex-flow: column nowrap;
+
+    }
+  }
+}
+
+.reversed {
+  transform: rotate(180deg);
+}

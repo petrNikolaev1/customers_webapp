@@ -1,0 +1,121 @@
+@import "index.scss";
+
+.top-panel-container {
+  $lineHeight: 2vw;
+  $minHeight: 3vw;
+  $fontSize: 1.3vw;
+  $fontSizeMed: 1.1vw;
+  $fontSizeSmall: 1vw;
+  $verPadding: 1.5vw;
+
+  font-family: 'Poppins', sans-serif;
+  line-height: $lineHeight;
+  font-size: $fontSize;
+  word-break: break-all;
+
+  background: white;
+
+  margin-bottom: 0;
+
+  align-self: stretch;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &-item {
+    flex-shrink: 0;
+    padding: $verPadding 2vw;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: $minHeight;
+  }
+
+  &-logo {
+    &-container {
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 0;
+    }
+    padding-right: 0;
+    flex-basis: auto;
+    img {
+      position: absolute;
+      width: 10vw;
+    }
+  }
+  &-version {
+    margin-left: 11vw;
+    padding-left: 0;
+    flex: 1;
+    &-label {
+      flex-basis: auto;
+      flex-shrink: 0;
+    }
+    &-value {
+      margin-top: 0.3vw;
+      align-self: flex-start;
+      font-size: $fontSizeSmall;
+      .outer {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: 1vw;
+      }
+      img {
+        position: absolute;
+        height: 4vw;
+      }
+    }
+  }
+  &-settings {
+    padding: 0;
+    flex-basis: 7%;
+    align-self: stretch;
+    justify-content: center;
+    background: $dooglysColor;
+    svg {
+      font-size: 3vw;
+      fill: white;
+    }
+    transition: 0.5s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      background: darken($dooglysColor, 5%);
+    }
+
+  }
+
+  &-home {
+    padding: 0;
+    flex-basis: 7%;
+    align-self: stretch;
+    justify-content: center;
+    background: $dooglysColor;
+    svg {
+      font-size: 3vw;
+      fill: white;
+    }
+    transition: 0.5s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      background: darken($dooglysColor, 5%);
+    }
+
+    border-right: 0.2vw solid white;
+  }
+
+  &-lang {
+    padding: 0;
+    margin-right: 18%;
+    flex-basis: 25%;
+  }
+}

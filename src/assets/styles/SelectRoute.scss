@@ -1,0 +1,67 @@
+@import "index.scss";
+
+.select-route.-show {
+  width: 80%;
+}
+
+.select-route-container {
+  background: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-self: stretch;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+
+  &-info {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    background: white;
+
+    .btns {
+      margin-top: 15vw;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+
+      &-item {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 11vw;
+        height: 3vw;
+        transition: 0.5s ease-out;
+      }
+      &-item:hover {
+        cursor: pointer;
+      }
+      &-approve {
+        background: $dooglysColor;
+        margin-bottom: 1.5vw;
+        margin-right: 0;
+      }
+      &-cancel {
+        background: $errColor;
+      }
+      &-approve:hover {
+        background: darken($dooglysColor, 10%);
+      }
+      &-cancel:hover {
+        background: darken($errColor, 10%);
+      }
+    }
+  }
+
+  &-map {
+    flex-shrink: 0;
+    flex-basis: 80%;
+    height: 90vh;
+  }
+}

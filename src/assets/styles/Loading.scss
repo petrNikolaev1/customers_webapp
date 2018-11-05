@@ -1,0 +1,40 @@
+@import 'index.scss';
+
+.loading-container {
+  $iconContainerSize: 15.5vw;
+  $cogSize: 14.3vw;
+  $logoSize: 13vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  width: $iconContainerSize;
+  height: $iconContainerSize;
+
+  background: $initialBackground;
+  animation: 10s, color-change infinite linear 5s;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+
+  &-cog {
+    animation: spinner infinite linear 10s;
+    img {
+      height: $cogSize;
+      width: $cogSize;
+    }
+  }
+  &-logo {
+    img {
+      width: $logoSize;
+      height: $logoSize;
+    }
+  }
+}
