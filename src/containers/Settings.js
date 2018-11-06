@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {Reply, ExitToApp, ExpandMore} from '@material-ui/icons';
-import Select from '@/common/Select'
 import OperatorPhoto from '@/assets/img/personal_photo.jpg'
 import {logout} from "@/actions/serverActions";
 
@@ -47,31 +46,6 @@ export default class Settings extends Component {
                     </Link>
                 </div>
                 <div className='settings-info'>
-                    <div className="settings-info-title" onClick={this.showAdministrationPanel}>
-                        <div className="settings-info-title-text">
-                            {strings.ADMIN_PANEL}
-                        </div>
-                        <div className="settings-info-title-expand">
-                            <ExpandMore
-                                className={classNames('home-block-title-expand', {'reversed': administrationPanelOpened})}
-                            />
-                        </div>
-                    </div>
-                    {administrationPanelOpened &&
-                    <div className='settings-info-drivers'>
-                        <div className='settings-info-drivers-label'>
-                            {strings.SELECT_NUMBER}
-                        </div>
-                        <div className='settings-info-drivers-select'>
-                            <Select
-                                isSerchable={true}
-                                noOptionsMessage={'No Options'}
-                                placeholder={'3'}
-                                //TODO options={}
-                                formClassName='default-select'
-                            />
-                        </div>
-                    </div>}
                     <div className="settings-info-title" onClick={this.showPersonalInfo}>
                         <div className="settings-info-title-text">
                             {strings.PERSONAL_INFO}

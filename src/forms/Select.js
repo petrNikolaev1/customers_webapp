@@ -25,18 +25,9 @@ export default class SelectComponent extends Component {
     };
 
     option = (props) => {
-        console.log(props)
         return (
             <components.Option {...props}>
-                <ReactCountryFlag
-                    styleProps={{
-                        width: '1vw',
-                        height: '1vw',
-                        marginRight: '1vw'
-                    }}
-                    code={props.data.formalLabel}
-                    svg
-                />
+                {props.data.icon(false)}
                 {props.label}
             </components.Option>
         );
@@ -45,15 +36,7 @@ export default class SelectComponent extends Component {
     singleValue = ({children, ...props}) => (
         <components.SingleValue {...props}>
             {children}
-            <ReactCountryFlag
-                styleProps={{
-                    width: '1vw',
-                    height: '1vw',
-                    marginLeft: '1vw'
-                }}
-                code={props.data.formalLabel}
-                svg
-            />
+            {props.data.icon(true)}
         </components.SingleValue>
     );
 

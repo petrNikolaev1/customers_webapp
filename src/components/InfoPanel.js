@@ -4,7 +4,7 @@ import React, {PureComponent} from 'react';
 import '@/assets/styles/Panel.scss';
 import translate from '@/hocs/Translate'
 import logo from '@/assets/img/logo1_colored.svg'
-import Select from "@/common/Select";
+import Select from "@/forms/Select";
 import {langsOptions, langToSelectedOption} from "@/util/lang.js";
 import connect from "react-redux/es/connect/connect";
 import {changeLang} from "@/actions/stringActions";
@@ -18,6 +18,7 @@ import {Link} from 'react-router-dom'
 @translate('InfoPanel')
 export default class InfoPanel extends PureComponent {
     render() {
+        console.log(langsOptions)
         const {strings, language, changeLang} = this.props;
         return (
             <div className="top-panel-container">
