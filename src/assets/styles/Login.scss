@@ -6,7 +6,7 @@
   $logoSize: 15vw;
   $fontize: 1.4vw;
   $formFr: 33%;
-  $formLabelFr: 20%;
+  $formLabelFr: 22%;
 
   font-size: $fontize;
   width: 100%;
@@ -25,7 +25,7 @@
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 4vw;
+    margin-bottom: 3vw;
 
     img {
       width: $logoSize;
@@ -45,7 +45,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #eee;
+      color: white;
     }
 
     &-item {
@@ -93,10 +93,35 @@
       width: 100%-$formLabelFr;
       align-self: flex-end;
       transition: 0.5s ease-out;
+      &:hover {
+        cursor: pointer;
+        background: darken($dooglysColor, 3%);
+      }
     }
-    &-enter:hover {
-      cursor: pointer;
-      background: darken($dooglysColor, 3%);
+    &-register {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      align-self: flex-end;
+      box-sizing: border-box;
+
+      margin-top: 2vw;
+      width: 100%-$formLabelFr;
+      padding: 1vw 2vw;
+
+      border-radius: 1vw;
+      border: 0.1vw solid $inputBackground;
+      &-label {
+
+      }
+      &-btn {
+        margin-left: 1vw;
+        border-bottom: 0.1vw solid currentColor;
+        cursor: pointer;
+        line-height: 1.1;
+      }
     }
   }
 }

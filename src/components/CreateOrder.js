@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import {ChevronLeft, ChevronRight, Close} from '@material-ui/icons';
+import classNames from 'classnames'
 
 import '@/assets/styles/CreateOrder.scss'
 import showBeforeHOC from "@/hocs/showBeforeHOC";
@@ -10,6 +11,7 @@ import Footer from "@/common/Footer";
 import {hideCreateOrder} from '@/actions/viewActions'
 import connect from "react-redux/es/connect/connect";
 import {apiReq} from '@/actions/serverActions'
+import Header from "../common/Header";
 
 const pages = [
     {title: 'Основная информация', forms: ['description', 'weight', 'worth']},
@@ -227,7 +229,6 @@ export default class CreateOrder extends Component {
 
     onFooter = () => {
         if (!this.footerEnabled()) return;
-        console.log(this.state.forms)
         const {forms} = this.state;
         this.props.apiReq('order',
             {
@@ -252,23 +253,16 @@ export default class CreateOrder extends Component {
     };
 
     render() {
-        const {hideCreateOrder} = this.props;
+        const {hideCreateOrder, showBeforeClass} = this.props;
         const {currentPage, footerMounted} = this.state;
 
         const forms = this.getCurrentPageForms();
-        const firstForm = Object.values(forms)[0]
+        const firstForm = Object.values(forms)[0];
         // console.log('RENDER', firstForm)
 
         return (
-            <div className="order-creation-container">
-                <div className='order-creation-container-header'>
-                    <div className="order-creation-container-header-label">
-                        Оформление заказа
-                    </div>
-                    <div className="order-creation-container-header-img" onClick={hideCreateOrder}>
-                        <Close className='close-icon'/>
-                    </div>
-                </div>
+            <div className={classNames("order-creation-container", showBeforeClass)}>
+                <Header label='Оформление заказа' onClose={hideCreateOrder}/>
 
                 <div className='order-creation-container-page-header'>
                     <div className="order-creation-container-page-header-label">

@@ -42,7 +42,9 @@ export default {
         PASSWORD: 'Пароль',
         ENTER: 'Войти',
         INVALID: 'Неправильный логин/пароль',
-        NOT_ALL_FIELDS: 'Пожалуйста, заполните все поля'
+        NOT_ALL_FIELDS: 'Пожалуйста, заполните все поля',
+        SIGN_UP: 'Создать',
+        NOT_REGISTERED: 'Ещё нет аккаунта IDC?'
     },
 
     InfoPanel: {
@@ -82,10 +84,12 @@ export default {
 
     Success: {
         CREATE_ORDER_SUCCESS: 'Заказ успешно оформлен!',
+        REGISTER_CUSTOMER_SUCCESS: 'Регистрация прошла успешно'
     },
 
     Error: {
         CREATE_ORDER_ERROR: 'Не удалось оформить заказ. Возможны проблемы с сетью',
+        REGISTER_CUSTOMER_ERROR: 'Во время регистрации произошла ошибка. Возможны проблемы с сетью'
     },
 
     Settings: {
@@ -110,5 +114,16 @@ export default {
 
     CreateOrder: {
         CREATE_ORDER: 'Создать заказ'
+    },
+
+    CustomerRegistration:{
+        REGISTRATION: 'Регистрация',
+        NAME: 'Имя',
+        NAME_NOTIFICATION: 'Пожалуйста, укажите имя',
+        EMAIL: 'E-mail',
+        EMAIL_NOTIFICATION: 'Неверный формат e-mail',
+        PASSWORD: 'Пароль',
+        PASSWORD_NOTIFICATION: 'Минимальная длина пароля -\n 6 символов',
+        REGISTER: 'Зарегистрироваться'
     }
 };

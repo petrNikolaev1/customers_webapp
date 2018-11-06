@@ -36,11 +36,13 @@ export default {
     },
 
     Login: {
-        LOGIN: 'Логин',
-        PASSWORD: 'Пароль',
-        ENTER: 'Войти',
+        LOGIN: 'Кіру',
+        PASSWORD: 'Құпия сөз',
+        ENTER: 'Жүйеге кіріңіз',
         INVALID: 'Жарамсыз логин / пароль',
-        NOT_ALL_FIELDS: 'Барлық өрістерді толтырыңыз'
+        NOT_ALL_FIELDS: 'Барлық өрістерді толтырыңыз',
+        SIGN_UP: 'Жасау',
+        NOT_REGISTERED: 'IDC тіркелгісі әлі жоқ па?'
     },
 
     InfoPanel: {
@@ -79,11 +81,13 @@ export default {
     },
 
     Success: {
-        CREATE_ORDER_SUCCESS: 'Заказ успешно подтвержден!',
+        CREATE_ORDER_SUCCESS: 'Тапсырыс сәтті шығарылды!',
+        REGISTER_CUSTOMER_SUCCESS: 'Тіркеу сәтті болды'
     },
 
     Error: {
-        CREATE_ORDER_ERROR: 'Не удалось оформить заказ. Возможны проблемы с сетью',
+        CREATE_ORDER_ERROR: 'Тапсырыс сәтсіз аяқталды. Желілік мәселелер болуы мүмкін.',
+        REGISTER_CUSTOMER_ERROR: 'Тіркелу кезінде қате пайда болды. Желілік мәселелер болуы мүмкін.'
     },
 
     Settings: {
@@ -108,6 +112,17 @@ export default {
 
     CreateOrder: {
         CREATE_ORDER: 'Тапсырыс жасау'
+    },
+
+    CustomerRegistration:{
+        REGISTRATION: 'Тіркеу',
+        NAME: 'Атауы',
+        NAME_NOTIFICATION: 'Атыңызды енгізіңіз',
+        EMAIL: 'E-mail',
+        EMAIL_NOTIFICATION: 'Жарамсыз электрондық пошта пішімі',
+        PASSWORD: 'Құпия сөз',
+        PASSWORD_NOTIFICATION: 'Парольдің ең аз ұзындығы -\n 6 таңба',
+        REGISTER: 'Аккаунты жасау'
     }
 
 };

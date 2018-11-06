@@ -40,7 +40,9 @@ export default {
         PASSWORD: 'Password',
         ENTER: 'Enter',
         INVALID: 'Invalid login/password',
-        NOT_ALL_FIELDS: 'Please, fill all fields'
+        NOT_ALL_FIELDS: 'Please, fill all fields',
+        SIGN_UP: 'Sign up',
+        NOT_REGISTERED: 'New to IDC?'
     },
 
     InfoPanel:{
@@ -79,11 +81,13 @@ export default {
     },
 
     Success: {
-        CREATE_ORDER_SUCCESS: 'Заказ успешно подтвержден!',
+        CREATE_ORDER_SUCCESS: 'Order successfully issued!',
+        REGISTER_CUSTOMER_SUCCESS: 'CustomerRegistration completed successfully'
     },
 
     Error: {
-        CREATE_ORDER_ERROR: 'Не удалось оформить заказ. Возможны проблемы с сетью',
+        CREATE_ORDER_ERROR: 'Failed to place an order. There may be network issues.',
+        REGISTER_CUSTOMER_ERROR: 'An error has occurred during registration. There may be network issues.'
     },
 
     Settings: {
@@ -108,5 +112,16 @@ export default {
 
     CreateOrder: {
         CREATE_ORDER: 'Create order'
+    },
+
+    CustomerRegistration:{
+        REGISTRATION: 'CustomerRegistration',
+        NAME: 'Name',
+        NAME_NOTIFICATION: 'Please, enter your name',
+        EMAIL: 'E-mail',
+        EMAIL_NOTIFICATION: 'Invalid email format',
+        PASSWORD: 'Password',
+        PASSWORD_NOTIFICATION: 'The minimum password length -\n 6 symbols',
+        REGISTER: 'Create an account'
     }
 };

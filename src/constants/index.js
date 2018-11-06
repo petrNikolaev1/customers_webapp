@@ -27,6 +27,9 @@ export default keyMirror({
     HIDE_SELECT_DRIVER: null,
     HIDE_CREATE_ORDER: null,
     SHOW_CREATE_ORDER: null,
+    SHOW_CUSTOMER_REGISTRATION: null,
+    HIDE_CUSTOMER_REGISTRATION: null,
+
     FILTER: null,
 
     GET_PROPOSED_ROUTE_REQUEST: null,
@@ -108,6 +111,8 @@ export default keyMirror({
     TRANSPARENT_FORM: null,
     SELECT_LOCATION: null,
     STRING_INPUT: null,
+    EMAIL_INPUT: null,
+    PASSWORD_INPUT: null,
     AMOUNT_INPUT: null,
     WEIGHT_INPUT: null,
     DATETIME: null,
@@ -116,4 +121,9 @@ export default keyMirror({
     CREATE_ORDER_REQUEST: null,
     CREATE_ORDER_ERROR: null,
     CREATE_ORDER_SUCCESS: null,
+
+    register: null,
+    REGISTER_CUSTOMER_REQUEST: null,
+    REGISTER_CUSTOMER_ERROR: null,
+    REGISTER_CUSTOMER_SUCCESS: null,
 })

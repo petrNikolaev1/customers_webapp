@@ -32,4 +32,20 @@ export const commandsData = {
         defaultErrorHandler: {text: 'CREATE_ORDER_ERROR'}
     },
 
+    [constants.register]: {
+        command: constants.register,
+        method: 'POST',
+        paramsType: constants.BODY,
+        events: {
+            onRequest: constants.REGISTER_CUSTOMER_REQUEST,
+            onError: constants.REGISTER_CUSTOMER_ERROR,
+            onSuccess: constants.REGISTER_CUSTOMER_SUCCESS,
+        },
+        defaultSuccessHandler: {text: 'REGISTER_CUSTOMER_SUCCESS'},
+        defaultErrorHandler: {text: 'REGISTER_CUSTOMER_ERROR'},
+        customSuccessHandler: (res, actions) => {
+            cookies.set('token', res.auth_token);
+        },
+    },
+
 };

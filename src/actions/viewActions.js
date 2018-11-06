@@ -90,3 +90,16 @@ export const hideCreateOrder = () => dispatch => {
         type: constants.HIDE_CREATE_ORDER
     });
 };
+
+export const showCustomerRegistration = (payload) => dispatch => {
+    dispatch({
+        type: constants.SHOW_CUSTOMER_REGISTRATION,
+        payload
+    });
+};
+
+export const hideCustomerRegistration = () => dispatch => {
+    dispatch({
+        type: constants.HIDE_CUSTOMER_REGISTRATION
+    });
+};

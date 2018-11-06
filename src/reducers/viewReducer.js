@@ -81,6 +81,16 @@ export function viewReducer(state = initialState, action) {
                 ...state,
                 createOrderShown: false
             };
+        case constants.SHOW_CUSTOMER_REGISTRATION:
+            return {
+                ...state,
+                customerRegistrationShown: true
+            };
+        case constants.HIDE_CUSTOMER_REGISTRATION:
+            return {
+                ...state,
+                customerRegistrationShown: false
+            };
 
         default:
             return state;

@@ -40,7 +40,9 @@ export default {
         PASSWORD: 'Password',
         ENTER: 'Entrare',
         INVALID: 'Login / password non validi',
-        NOT_ALL_FIELDS: 'Per favore compila tutti i campi'
+        NOT_ALL_FIELDS: 'Per favore compila tutti i campi',
+        SIGN_UP: 'Iscriviti',
+        NOT_REGISTERED: 'Nuovo A IDC?'
     },
 
     InfoPanel: {
@@ -79,12 +81,15 @@ export default {
     },
 
     Success: {
-        CREATE_ORDER_SUCCESS: 'Заказ успешно подтвержден!',
+        CREATE_ORDER_SUCCESS: 'Ordine emesso con successo!',
+        REGISTER_CUSTOMER_SUCCESS: 'La registrazione è andata a buon fine'
     },
 
     Error: {
-        CREATE_ORDER_ERROR: 'Не удалось оформить заказ. Возможны проблемы с сетью',
+        CREATE_ORDER_ERROR: 'Impossibile effettuare un ordine. Potrebbero esserci problemi di rete.',
+        REGISTER_CUSTOMER_ERROR: 'Si è verificato un errore durante la registrazione. Potrebbero esserci problemi di rete.'
     },
+
     Settings: {
         SETTINGS: 'Impostazioni',
         BACK: 'Ritorna al menu principale',
@@ -107,5 +112,16 @@ export default {
 
     CreateOrder: {
         CREATE_ORDER: 'Creare ordine'
+    },
+
+    CustomerRegistration:{
+        REGISTRATION: 'Registrazione',
+        NAME: 'Nome',
+        NAME_NOTIFICATION: 'Per favore inserisci il tuo nome',
+        EMAIL: 'E-mail',
+        EMAIL_NOTIFICATION: 'Formato email non valido',
+        PASSWORD: 'Parola d\'ordine',
+        PASSWORD_NOTIFICATION: 'La lunghezza minima della password -\n 6 simboli',
+        REGISTER: 'Crea un account'
     }
 };

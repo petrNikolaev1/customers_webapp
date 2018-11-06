@@ -3,7 +3,7 @@ import {Switch, Route, withRouter} from 'react-router-dom'
 import connect from "react-redux/es/connect/connect";
 
 import MainMenu from '@/containers/MainMenu'
-import Login from "@/components/Login";
+import Login from "@/components/Auth/Login";
 import Loading from "@/common/Loading";
 import PrivateRoute from '@/common/PrivateRoute'
 import Success from "@/common/Success";
