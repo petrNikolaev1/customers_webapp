@@ -10,6 +10,7 @@
   $tableRowHeight: 3vw;
   $headerVerPadding: 1.1vw;
   $horPadding: 3vw;
+  $borderRadius: 1vw;
 
   color: $black;
 
@@ -58,5 +59,20 @@
         }
       }
     }
+
+    transition: 0.5s ease-in-out;
+
+    &-rounded {
+      border-bottom-left-radius: $borderRadius;
+      border-bottom-right-radius: $borderRadius;
+    }
+  }
+  &-header-rounded {
+    border-top-left-radius: $borderRadius;
+    border-top-right-radius: $borderRadius;
+  }
+  &-footer-rounded{
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
   }
 }

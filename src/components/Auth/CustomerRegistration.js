@@ -129,10 +129,15 @@ export default class CustomerRegistration extends Component {
         const {hideCustomerRegistration, strings, showBeforeClass} = this.props;
         const {footerMounted, forms} = this.state;
 
+        const bodyClass = classNames('customer-registration-container-body', {'customer-registration-container-body-rounded': !footerMounted || !this.footerEnabled()});
+
         return (
             <div className={classNames("customer-registration-container", showBeforeClass)}>
-                <Header label={strings.REGISTRATION} onClose={hideCustomerRegistration}/>
-                <div className='customer-registration-container-body'>
+                <Header label={strings.REGISTRATION}
+                        onClose={hideCustomerRegistration}
+                        headerContainerClass='customer-registration-container-header-rounded'
+                />
+                <div className={bodyClass}>
                     <div className='customer-registration-container-body-table'>
                         {this.renderForms(forms)}
                     </div>
@@ -143,6 +148,7 @@ export default class CustomerRegistration extends Component {
                     unmount={this.unmountFooter}
                     handleClick={this.onFooter}
                     text={strings.REGISTER}
+                    footerContainerClass='customer-registration-container-footer-rounded'
                 />}
             </div>
 
