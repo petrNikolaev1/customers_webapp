@@ -2,27 +2,26 @@ import React, {Component} from "react"
 
 import '@/assets/styles/MainMenu.scss'
 import InfoPanel from "@/components/InfoPanel";
-import Button from "@/common/Button";
 import connect from "react-redux/es/connect/connect";
-import CreateOrder from '@/components/CreateOrder'
-import {showCreateOrder} from '@/actions/viewActions'
+import CreateOrder from '@/components/Orders/CreateOrder'
 import translate from "@/hocs/Translate";
+import OrderList from "@/components/Orders/OrderList";
 
 @connect(
     store => ({
         createOrderShown: store.viewReducer.createOrderShown,
-    }), {showCreateOrder}
+    }), {}
 )
 @translate('CreateOrder')
 
 export default class MainMenu extends Component {
 
     render() {
-        const {createOrderShown, showCreateOrder, strings} = this.props;
+        const {createOrderShown, } = this.props;
         return (
             <div className='main-menu-container'>
                 <InfoPanel/>
-                <Button onClick={showCreateOrder} label={strings.CREATE_ORDER}/>
+                <OrderList/>
                 {createOrderShown && <CreateOrder/>}
             </div>
         )

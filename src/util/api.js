@@ -1,6 +1,28 @@
 import constants from '@/constants'
 import cookies from "js-cookie";
 
+export const statuses = [
+    constants.PENDING_CONFIRMATION,
+    constants.IN_PROGRESS,
+    constants.DELIVERED,
+    constants.REJECTED,
+];
+
+export const isInProgress = status => status === constants.DELIVERED;
+
+export const mapStatusToNum = status => statuses.indexOf(status);
+
+export const optimalDriversToOptions = (vehicles) => {
+    return vehicles.map(vehicle => ({
+        timeToOrder: vehicle.time_till_order,
+        value: vehicle.vehicle_json.id,
+        type: vehicle.vehicle_json.type,
+        vehicleId: vehicle.vehicle_json.id,
+        driversIds: vehicle.vehicle_json.drivers.reduce((res, cur) => res.concat(cur.id), []),
+        label: vehicle.vehicle_json.drivers.reduce((res, cur) => res.length > 0 ? res + ', ' + cur.name : res + cur.name, ''),
+    }));
+};
+
 export default (command, params) => ({...commandsData[command], params})
 
 export const commandsData = {
@@ -20,7 +42,7 @@ export const commandsData = {
     },
 
     [constants.order]: {
-        command: constants.order,
+        command: constants.orders,
         method: 'POST',
         paramsType: constants.BODY,
         events: {
@@ -46,6 +68,17 @@ export const commandsData = {
         customSuccessHandler: (res, actions) => {
             cookies.set('token', res.auth_token);
         },
+    },
+
+    [constants.orders]: {
+        command: constants.orders,
+        method: 'GET',
+        paramsType: constants.QUERY,
+        events: {
+            onRequest: constants.GET_ORDERS_REQUEST,
+            onError: constants.GET_ORDERS_ERROR,
+            onSuccess: constants.GET_ORDERS_SUCCESS
+        }
     },
 
 };

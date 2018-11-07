@@ -35,6 +35,7 @@ export default {
         [constants.IN_PROGRESS]: 'Доставляется',
         [constants.DELIVERED]: 'Доставлен',
         [constants.REJECTED]: 'Отклонен',
+        TRACK_ORDER: 'Отследить заказ'
     },
 
     Login: {

@@ -18,7 +18,6 @@ import {Link} from 'react-router-dom'
 @translate('InfoPanel')
 export default class InfoPanel extends PureComponent {
     render() {
-        console.log(langsOptions)
         const {strings, language, changeLang} = this.props;
         return (
             <div className="top-panel-container">

@@ -5,57 +5,11 @@
 }
 
 .add-container {
-  $headerHeight: 1.7vw;
-  $buttonHeight: 4vw;
-  $headerVerPadding: 1.1vw;
   $horPadding: 3vw;
   $lineHeight: 1.3vw;
 
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-around;
-  align-self: stretch;
-
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-
-  &-header {
-    background: white;
-
-    padding: $headerVerPadding $horPadding;
-    line-height: $headerHeight;
-
-    font-size: 1.3vw;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-
-    border-bottom: 1px solid $borderColor;
-
-    &-label {
-      flex: 1;
-    }
-
-    &-img {
-      flex-basis: auto;
-
-      .close-icon {
-        vertical-align: middle;
-        font-size: 3vw;
-        fill: $closeColor;
-        transition: 0.3s ease-out;
-      }
-
-      .close-icon:hover {
-        cursor: pointer;
-        fill: darken($closeColor, 10%);
-      }
-
-    }
-
-  }
 
   &-table {
     background: white;
@@ -68,55 +22,36 @@
     flex-flow: column nowrap;
     justify-content: space-between;
   }
-}
 
-.order-props-item {
-  border-bottom: solid 1px silver;
-  display: flex;
-  flex-flow: row nowrap;
-  padding: 1vw 0;
-
-  &-label {
-    font-weight: 600;
-    font-size: 1.3vw;
-    color: rgb(153, 153, 153);
-    margin-right: 2vw;
-  }
-
-  &-value {
-    font-size: 1.4vw;
-  }
-}
-
-.btns {
-  margin-top: 2vw;
-  align-self: center;
-  display: flex;
-
-  &-item {
-    color: white;
+  .order-props-item {
+    border-bottom: solid 1px silver;
     display: flex;
-    align-items: center;
+    flex-flow: row nowrap;
+    padding: 1vw 0;
+
+    &-label {
+      font-weight: 600;
+      font-size: 1.3vw;
+      color: rgb(153, 153, 153);
+      margin-right: 2vw;
+    }
+
+    &-value {
+      font-size: 1.4vw;
+    }
+  }
+
+  &-btns {
+    display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
-    width: 15vw;
-    height: 4vw;
-    transition: 0.5s ease-out;
-  }
-  &-item:hover {
-    cursor: pointer;
-  }
-  &-approve {
-    margin-right: 10vw;
-    background: $dooglysColor;
-  }
-  &-reject {
-    background: $errColor;
-  }
-  &-approve:hover {
-    background: darken($dooglysColor, 10%);
-  }
-  &-reject:hover {
-    background: darken($errColor, 10%);
+
+    &-item {
+      margin-top: 2vw;
+      margin-right: 2vw;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
   }
 }
-

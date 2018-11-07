@@ -11,7 +11,7 @@ import Footer from "@/common/Footer";
 import {hideCreateOrder} from '@/actions/viewActions'
 import connect from "react-redux/es/connect/connect";
 import {apiReq} from '@/actions/serverActions'
-import Header from "../common/Header";
+import Header from "../../common/Header";
 
 const pages = [
     {title: 'Основная информация', forms: ['description', 'weight', 'worth']},
