@@ -230,7 +230,8 @@ export default class CreateOrder extends Component {
     onFooter = () => {
         if (!this.footerEnabled()) return;
         const {forms} = this.state;
-        this.props.apiReq('order',
+        this.props.apiReq(
+            'order',
             {
                 description: forms.description.value,
                 worth: Number(forms.worth.value),
@@ -247,7 +248,8 @@ export default class CreateOrder extends Component {
                 destination_short_address: forms.destination.shortAddress,
 
                 dueDate: forms.dueDate.value.valueOf()
-            }
+            },
+            this.props
         );
         this.props.hideCreateOrder()
     };

@@ -29,6 +29,8 @@ export default keyMirror({
     SHOW_CREATE_ORDER: null,
     SHOW_CUSTOMER_REGISTRATION: null,
     HIDE_CUSTOMER_REGISTRATION: null,
+    SHOW_TRACKING_ORDER: null,
+    HIDE_TRACKING_ORDER: null,
 
     FILTER: null,
 
@@ -126,4 +128,9 @@ export default keyMirror({
     REGISTER_CUSTOMER_REQUEST: null,
     REGISTER_CUSTOMER_ERROR: null,
     REGISTER_CUSTOMER_SUCCESS: null,
+
+    GET_TRACKING_ROUTE_REQUEST: null,
+    GET_TRACKING_ROUTE_ERROR: null,
+    GET_TRACKING_ROUTE_SUCCESS: null,
+    RESET_TRACKING_ROUTE: null,
 })

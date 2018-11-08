@@ -1,4 +1,4 @@
-import {Settings, Home, Chat} from '@material-ui/icons';
+import {ExitToApp} from '@material-ui/icons';
 import React, {PureComponent} from 'react';
 
 import '@/assets/styles/Panel.scss';
@@ -9,16 +9,21 @@ import {langsOptions, langToSelectedOption} from "@/util/lang.js";
 import connect from "react-redux/es/connect/connect";
 import {changeLang} from "@/actions/stringActions";
 import {Link} from 'react-router-dom'
+import {logout} from "@/actions/serverActions";
+
 
 @connect(
     store => ({
         language: store.stringReducer.language
-    }), {changeLang}
+    }), {changeLang, logout}
 )
 @translate('InfoPanel')
+
 export default class InfoPanel extends PureComponent {
+
     render() {
-        const {strings, language, changeLang} = this.props;
+        const {strings, language, changeLang, logout} = this.props;
+
         return (
             <div className="top-panel-container">
                 <div className="top-panel-container-item top-panel-container-logo">
@@ -43,8 +48,8 @@ export default class InfoPanel extends PureComponent {
                         formClassName='default-select'
                     />
                 </div>
-                <Link className="top-panel-container-item top-panel-container-settings" to='/settings'>
-                    <Settings/>
+                <Link to={'/'} onClick={logout} className="top-panel-container-item top-panel-container-settings">
+                    <ExitToApp/>
                 </Link>
             </div>
         )

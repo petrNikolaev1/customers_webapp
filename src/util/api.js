@@ -8,7 +8,7 @@ export const statuses = [
     constants.REJECTED,
 ];
 
-export const isInProgress = status => status === constants.DELIVERED;
+export const isInProgress = status => status === constants.IN_PROGRESS;
 
 export const mapStatusToNum = status => statuses.indexOf(status);
 
@@ -51,7 +51,11 @@ export const commandsData = {
             onSuccess: constants.CREATE_ORDER_SUCCESS,
         },
         defaultSuccessHandler: {text: 'CREATE_ORDER_SUCCESS'},
-        defaultErrorHandler: {text: 'CREATE_ORDER_ERROR'}
+        defaultErrorHandler: {text: 'CREATE_ORDER_ERROR'},
+        customSuccessHandler: (res, actions) => {
+            const {apiReq} = actions;
+            apiReq(constants.orders, {limit: 1000, offset: 0})
+        },
     },
 
     [constants.register]: {

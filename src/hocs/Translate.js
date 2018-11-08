@@ -32,7 +32,6 @@ export default function translate(key) {
     return (Component) => {
         const stateToProps = store => ({
             currentLanguage: store.stringReducer.language,
-            store: store
         });
 
         const TranslationComponent = (props) => {

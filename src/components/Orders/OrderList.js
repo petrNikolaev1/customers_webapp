@@ -1,7 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import constants from '@/constants'
-import {Autorenew} from '@material-ui/icons';
 
 import translate from '@/hocs/Translate'
 import '@/assets/styles/OrderList.scss'
@@ -13,13 +12,13 @@ import OrdersFilter from './OrdersFilter'
 import {filterOrders} from '@/util/filters'
 import Button from "@/common/Button";
 import {showCreateOrder} from '@/actions/viewActions'
+import TrackingOrder from "@/components/Tracking/TrackingContainer";
 
 @connect(
     store => ({
         orders: store.ordersReducer,
         orderModalShown: store.viewReducer.orderModalShown,
-        orderDriversShown: store.viewReducer.orderDriversShown,
-        selectRouteShown: store.viewReducer.selectRouteShown,
+        trackingOrderShown: store.viewReducer.trackingOrderShown,
         filters: store.ordersReducer.filters
     }), {apiReq, showCreateOrder}
 )
@@ -69,20 +68,23 @@ export default class OrderList extends Component {
     };
 
     rendeOrders = () => {
-        const {orderModalShown, orderDriversShown, selectRouteShown, showCreateOrder, strings} = this.props;
+        const {orderModalShown, trackingOrderShown} = this.props;
         const {pageOfItems} = this.state;
 
         return (
             <div>
                 {pageOfItems.map(item => {
                         return (
-                            <div key={item.id}>
+                            <Fragment key={item.id}>
                                 <OrderItem
                                     {...item}
                                 />
                                 {item.id === orderModalShown &&
                                 <OrderModal{...item}/>}
-                            </div>)
+                                {item.id === trackingOrderShown.orderId &&
+                                <TrackingOrder {...item}/>}
+                            </Fragment>
+                        )
                     }
                 )}
             </div>

@@ -2,8 +2,7 @@ import constants from '@/constants'
 
 const initialState = {
     orderModalShown: -1,
-    orderDriversShown: -1,
-    selectRouteShown: -1,
+    trackingOrderShown: -1,
     loadingShow: false,
     success: null,
     error: null,
@@ -21,26 +20,7 @@ export function viewReducer(state = initialState, action) {
                 ...state,
                 orderModalShown: -1
             };
-        case constants.SHOW_SELECT_DRIVER:
-            return {
-                ...state,
-                orderDriversShown: action.orderId
-            };
-        case constants.HIDE_SELECT_DRIVER:
-            return {
-                ...state,
-                orderDriversShown: -1
-            };
-        case constants.SHOW_SELECT_ROUTE:
-            return {
-                ...state,
-                selectRouteShown: action.orderId
-            };
-        case constants.HIDE_SELECT_ROUTE:
-            return {
-                ...state,
-                selectRouteShown: -1
-            };
+
         case constants.SHOW_LOADING:
             return {
                 ...state,
@@ -91,7 +71,16 @@ export function viewReducer(state = initialState, action) {
                 ...state,
                 customerRegistrationShown: false
             };
-
+        case constants.SHOW_TRACKING_ORDER:
+            return {
+                ...state,
+                trackingOrderShown: action.payload
+            };
+        case constants.HIDE_TRACKING_ORDER:
+            return {
+                ...state,
+                trackingOrderShown: {orderId: -1}
+            };
         default:
             return state;
     }

@@ -1,4 +1,4 @@
-export const getRoute = (google, payload) => {
+export const getRoute = (payload) => {
     const {origin, destination, provideRouteAlternatives} = payload;
     const DirectionsService = new window.google.maps.DirectionsService();
     return new Promise((resolve, reject) => {
@@ -31,6 +31,31 @@ export const getAddress = latLng => {
     })
 };
 
+
+export const spreadLatLng = latLng => ({lat: latLng.lat(), lng: latLng.lng()});
+
+export const getLat = pos => typeof pos.lat === 'function' ? pos.lat() : pos.lat;
+export const getLng = pos => typeof pos.lng === 'function' ? pos.lng() : pos.lng;
+
+export const findIndexInPath = (path, position) => {
+    const index = path.findIndex(pos => getLat(pos) === getLat(position) && getLng(pos) === getLng(position));
+    return index === -1 ? undefined : index
+};
+
+export const getStart = props => {
+    const {origin_latitude, origin_longitude} = props.origin;
+    return {lat: origin_latitude, lng: origin_longitude};
+};
+
+export const getEnd = props => {
+    const {destination_latitude, destination_longitude,} = props.destination;
+    return {lat: destination_latitude, lng: destination_longitude};
+};
+
+export const getCurrent = props => {
+    const {locationJson} = props;
+    return {lat: locationJson.latitude, lng: locationJson.longitude};
+};
 
 export const getCoordinates = address => {
     return new Promise((resolve, reject) => {

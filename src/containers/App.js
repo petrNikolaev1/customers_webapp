@@ -8,9 +8,7 @@ import Loading from "@/common/Loading";
 import PrivateRoute from '@/common/PrivateRoute'
 import Success from "@/common/Success";
 import Error from "@/common/Error";
-import {initGoogleMaps, getGoogleMaps} from "@/util/googleMapsRequests";
-import {apiReq} from "@/actions/serverActions";
-import Settings from "@/containers/Settings";
+import {initGoogleMaps} from "@/util/googleMapsRequests";
 
 @withRouter
 @connect(
@@ -20,13 +18,13 @@ import Settings from "@/containers/Settings";
         error: store.viewReducer.error,
         orderApprove: store.orderApproveReducer,
         language: store.stringReducer.language,
-    }), {apiReq}
+    }), {}
 )
 
 export default class App extends Component {
 
     componentDidMount() {
-        const {language, apiReq} = this.props;
+        const {language} = this.props;
         initGoogleMaps(language);
     }
 
@@ -37,7 +35,6 @@ export default class App extends Component {
             <Fragment>
                 <Switch>
                     <PrivateRoute exact path='/' component={MainMenu}/>
-                    <PrivateRoute path='/settings' component={Settings}/>
                     <Route path='/login/' component={Login}/>
                 </Switch>
                 {loadingShow && <Loading/>}

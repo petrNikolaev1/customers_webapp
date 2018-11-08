@@ -9,8 +9,8 @@ import moment from "moment";
 import '@/assets/styles/OrderModal.scss'
 import showBeforeHOC from "@/hocs/showBeforeHOC";
 import connect from "react-redux/es/connect/connect";
-import {hideOrderModal, showSelectRoute} from "@/actions/viewActions";
-import {resetOrderApproveInfo, apiReq} from "@/actions/serverActions";
+import {hideOrderModal, showTrackingOrder} from "@/actions/viewActions";
+import {resetTrackingRoute} from '@/actions/googleMapsActions'
 import translate from '@/hocs/Translate'
 import Header from "@/common/Header";
 import Button from "@/common/Button";
@@ -19,23 +19,23 @@ import {isInProgress} from "@/util/api";
 @connect(
     store => ({
         show: store.viewReducer.orderModalShown
-    }), {hideOrderModal, showSelectRoute, resetOrderApproveInfo, apiReq}
+    }), {hideOrderModal, showTrackingOrder, resetTrackingRoute}
 )
 @translate('OrderItem')
 @showBeforeHOC('add-device-menu')
 export default class OrderModal extends PureComponent {
 
-    onTrack = () => {
-    };
-
     onClose = () => {
-        const {resetOrderApproveInfo, hideOrderModal} = this.props;
+        const {hideOrderModal, id, resetTrackingRoute} = this.props;
         hideOrderModal();
-        resetOrderApproveInfo()
+        resetTrackingRoute({orderId: id});
     };
 
     render() {
-        const {strings, id, origin, destination, worth, weight, creation_date, due_date, status, description, showBeforeClass} = this.props;
+        const {
+            strings, id, origin, destination, worth, weight, creation_date, due_date, status, description,
+            showBeforeClass, showTrackingOrder, locationJson
+        } = this.props;
         const {destination_full_address} = destination;
         const {origin_full_address} = origin;
 
@@ -82,7 +82,19 @@ export default class OrderModal extends PureComponent {
 
                     <div className='add-container-btns'>
                         {isInProgress(status) &&
-                        <Button label={strings.TRACK_ORDER} buttonClass={'add-container-btns-item'} type='location'/>}
+                        <Button
+                            label={strings.TRACK_ORDER}
+                            buttonClass={'add-container-btns-item'}
+                            type='location'
+                            onClick={() => showTrackingOrder(
+                                {
+                                    orderId: id,
+                                    routeId: this.props.routeId,
+                                    origin,
+                                    destination,
+                                    locationJson
+                                })}
+                        />}
                     </div>
                 </div>
             </div>

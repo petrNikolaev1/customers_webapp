@@ -103,3 +103,16 @@ export const hideCustomerRegistration = () => dispatch => {
         type: constants.HIDE_CUSTOMER_REGISTRATION
     });
 };
+
+export const showTrackingOrder = payload => dispatch => {
+    dispatch({
+        type: constants.SHOW_TRACKING_ORDER,
+        payload
+    });
+};
+
+export const hideTrackingOrder = () => dispatch => {
+    dispatch({
+        type: constants.HIDE_TRACKING_ORDER
+    });
+};
