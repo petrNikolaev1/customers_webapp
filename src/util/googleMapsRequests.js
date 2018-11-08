@@ -53,8 +53,8 @@ export const getEnd = props => {
 };
 
 export const getCurrent = props => {
-    const {locationJson} = props;
-    return {lat: locationJson.latitude, lng: locationJson.longitude};
+    const {location} = props;
+    return {lat: location.latitude, lng: location.longitude};
 };
 
 export const getCoordinates = address => {

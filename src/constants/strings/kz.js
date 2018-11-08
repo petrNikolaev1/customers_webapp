@@ -32,7 +32,8 @@ export default {
         [constants.PENDING_CONFIRMATION]: 'Растауды күту',
         [constants.IN_PROGRESS]: 'Жеткізіледі',
         [constants.DELIVERED]: 'Жеткізілді',
-        [constants.REJECTED]: 'Қабылданбады'
+        [constants.REJECTED]: 'Қабылданбады',
+        TRACK_ORDER: 'Track order'
     },
 
     Login: {

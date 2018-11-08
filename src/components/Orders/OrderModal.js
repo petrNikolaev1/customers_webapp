@@ -34,7 +34,7 @@ export default class OrderModal extends PureComponent {
     render() {
         const {
             strings, id, origin, destination, worth, weight, creation_date, due_date, status, description,
-            showBeforeClass, showTrackingOrder, locationJson
+            showBeforeClass, showTrackingOrder, location, route_id
         } = this.props;
         const {destination_full_address} = destination;
         const {origin_full_address} = origin;
@@ -89,10 +89,10 @@ export default class OrderModal extends PureComponent {
                             onClick={() => showTrackingOrder(
                                 {
                                     orderId: id,
-                                    routeId: this.props.routeId,
+                                    route_id,
                                     origin,
                                     destination,
-                                    locationJson
+                                    location
                                 })}
                         />}
                     </div>

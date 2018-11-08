@@ -32,7 +32,8 @@ export default {
         [constants.PENDING_CONFIRMATION]: 'Pending',
         [constants.IN_PROGRESS]: 'Delivering',
         [constants.DELIVERED]: 'Delivered',
-        [constants.REJECTED]: 'Rejected'
+        [constants.REJECTED]: 'Rejected',
+        TRACK_ORDER: 'Track order'
     },
 
     Login: {

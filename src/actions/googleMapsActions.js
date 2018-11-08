@@ -6,7 +6,7 @@ export const getTrackingRoute = (payload) => {
     const {orderId, origin, destination} = payload;
     return async (dispatch, getState) => {
         const {trackingOrderShown} = getState().viewReducer;
-        const {routeId} = trackingOrderShown;
+        const {route_id} = trackingOrderShown;
         const start = getStart(trackingOrderShown);
         const end = getEnd(trackingOrderShown);
         const current = getCurrent(trackingOrderShown);
@@ -18,7 +18,7 @@ export const getTrackingRoute = (payload) => {
         getRoute({origin, destination, provideRouteAlternatives: true})
             .then(res => {
                 const trackingRoutesAll = res.routes;
-                const trackingRoutesSelected = (!!routeId && trackingRoutesAll[routeId]) || trackingRoutesAll[0];
+                const trackingRoutesSelected = (!!route_id && trackingRoutesAll[route_id]) || trackingRoutesAll[0];
 
                 const {distance, duration} = trackingRoutesSelected.legs[0];
 
