@@ -17,7 +17,7 @@ export default class LocationSearchInput extends React.Component {
     }
 
     initForm = () => {
-        const {googleCallbackName, stringValue, coordinatesValue, valid, empty, shortAddress} = this.props;
+        const {stringValue, coordinatesValue, valid, empty, shortAddress} = this.props;
 
         this.props.handleChange({
             stringValue: valid ? stringValue : '',

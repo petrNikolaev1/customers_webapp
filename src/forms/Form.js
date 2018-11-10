@@ -70,7 +70,6 @@ export default class Form extends Component {
     };
 
     transitionEnd = () => {
-        const {value, handleChange} = this.props;
         if (!this.props.mounted) {
             this.setState({
                 show: false

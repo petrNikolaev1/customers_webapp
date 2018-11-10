@@ -71,7 +71,7 @@ export default class Footer extends Component {
         const {handleClick, text, footerContainerClass, footerLabelClass, footerImgClass} = this.props;
         return (
             this.state.show ?
-                <div onClick={handleClick}
+                <button onClick={handleClick}
                      style={this.state.style}
                      onTransitionEnd={this.transitionEnd}
                      className={classNames('footer-container-default', `${footerContainerClass}`)}>
@@ -81,7 +81,7 @@ export default class Footer extends Component {
                     <div className={classNames('footer-container-default-label', `${footerLabelClass}`)}>
                         {text}
                     </div>
-                </div>
+                </button>
                 : null
         )
     }

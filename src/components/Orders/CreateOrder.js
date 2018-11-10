@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react'
-import {ChevronLeft, ChevronRight, Close} from '@material-ui/icons';
+import {ChevronLeft, ChevronRight} from '@material-ui/icons';
 import classNames from 'classnames'
 
 import '@/assets/styles/CreateOrder.scss'

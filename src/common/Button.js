@@ -21,10 +21,10 @@ export default class Button extends Component {
     render() {
         const {onClick, label, type, buttonClass} = this.props;
         return (
-            <div className={classNames("button-default", buttonClass)} onClick={onClick}>
+            <button className={classNames("button-default", buttonClass)} onClick={onClick}>
                 {this.renderIcon(type)}
                 <span className='button-default-label'>{label}</span>
-            </div>
+            </button>
         )
     }
 }

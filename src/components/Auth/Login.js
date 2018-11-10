@@ -86,9 +86,9 @@ export default class Login extends Component {
                     <form className='login-container-form' onSubmit={this.onSubmit}>
                         <div className='login-container-form-notify'>{notify}</div>
                         <div className='login-container-form-item'>
-                            <div className='login-container-form-item-label'>
+                            <label className='login-container-form-item-label'>
                                 {strings.LOGIN}
-                            </div>
+                            </label>
                             <input className='login-container-form-item-input'
                                    name='email'
                                    autoFocus
@@ -98,9 +98,9 @@ export default class Login extends Component {
                             />
                         </div>
                         <div className='login-container-form-item'>
-                            <div className='login-container-form-item-label'>
+                            <label className='login-container-form-item-label'>
                                 {strings.PASSWORD}
-                            </div>
+                            </label>
                             <input className='login-container-form-item-input'
                                    name='password'
                                    value={this.state.password}
