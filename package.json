@@ -71,10 +71,12 @@
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.4.0",
+    "expect": "^23.6.0",
     "extract-text-webpack-plugin": "3.0.2",
     "html-webpack-plugin": "2.29.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-hot-loader": "^4.3.7",
+    "react-test-renderer": "^16.6.1",
     "sw-precache-webpack-plugin": "0.11.4",
     "webpack": "3.8.1",
     "webpack-cli": "^3.1.0",
@@ -96,8 +98,7 @@
       "<rootDir>/config/polyfills.js"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
-      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+      "<rootDir>/tests/**/*.{js,jsx,mjs}"
     ],
     "testEnvironment": "node",
     "testURL": "http://localhost",
@@ -110,7 +111,8 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web"
+      "^react-native$": "react-native-web",
+      "^@(.*)$": "<rootDir>/src$1"
     },
     "moduleFileExtensions": [
       "web.js",
