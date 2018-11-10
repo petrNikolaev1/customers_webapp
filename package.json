@@ -122,7 +122,10 @@
       "jsx",
       "node",
       "mjs"
-    ]
+    ],
+    "globals": {
+      "window": true
+    }
   },
   "babel": {
     "presets": [
