@@ -7,7 +7,7 @@ import '@/assets/styles/TrackingOrder.scss'
 import translate from '@/hocs/Translate'
 import CustomMarker from "@/common/CustomMarker";
 import {selectedColor} from '@/util/rainbow'
-import {rotationAngle} from "@/util/icons";
+import {rotationAngle} from "@/util/googleMaps";
 
 @connect(
     store => ({

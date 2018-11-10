@@ -3,7 +3,7 @@ import {Close} from '@material-ui/icons';
 import PlacesAutocomplete, {geocodeByAddress,} from 'react-places-autocomplete';
 import classNames from 'classnames'
 import '@/assets/styles/LocationInputSearch.scss'
-import {getGoogleMaps, validateAddress, getCountryCity} from "@/util/googleMapsRequests";
+import {getGoogleMaps, validateAddress, getCountryCity} from "@/util/googleMaps";
 
 export default class LocationSearchInput extends React.Component {
     componentDidMount() {

@@ -1,6 +1,5 @@
 import constants from '@/constants'
-import {getRoute} from "@/util/googleMapsRequests";
-import {getCurrent, getStart, getEnd, findIndexInPath} from "@/util/googleMapsRequests";
+import {getRoute, getCurrent, getStart, getEnd, findIndexInPath} from "@/util/googleMaps";
 
 export const getTrackingRoute = (payload) => {
     const {orderId, origin, destination} = payload;

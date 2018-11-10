@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {withGoogleMap} from "react-google-maps";
 
 import Loading from '@/common/Loading'
-import {getGoogleMaps, initGoogleMaps} from "@/util/googleMapsRequests";
+import {getGoogleMaps, initGoogleMaps} from "@/util/googleMaps";
 import connect from "react-redux/es/connect/connect";
 
 export default (mapContainerClassName, mapClassName) => (ChildComponent) => {

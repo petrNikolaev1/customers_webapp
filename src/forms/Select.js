@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import Select, {components} from 'react-select';
-import ReactCountryFlag from "react-country-flag";
 
 import '@/assets/styles/Select.scss'
 

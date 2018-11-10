@@ -1,5 +1,5 @@
 import constants from '@/constants'
-import {initGoogleMaps} from "@/util/googleMapsRequests";
+import {initGoogleMaps} from "@/util/googleMaps";
 
 export const changeLang = (language) => {
 

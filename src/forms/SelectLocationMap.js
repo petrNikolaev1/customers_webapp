@@ -3,8 +3,8 @@ import React, {Component} from 'react'
 import {GoogleMap, Marker} from "react-google-maps";
 import GoogleMapHoc from "@/hocs/GoogleMapHoc";
 import '@/assets/styles/SelectLocation.scss'
-import {getAddress} from "@/util/googleMapsRequests";
-import {getCountryCity, validateAddress} from "@/util/googleMapsRequests";
+import {getAddress} from "@/util/googleMaps";
+import {getCountryCity, validateAddress} from "@/util/googleMaps";
 
 const defaultCenter = {lat: 0, lng: 0};
 const defaultZoom = 2;

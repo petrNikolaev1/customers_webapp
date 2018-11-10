@@ -8,7 +8,7 @@ import Loading from "@/common/Loading";
 import PrivateRoute from '@/common/PrivateRoute'
 import Success from "@/common/Success";
 import Error from "@/common/Error";
-import {initGoogleMaps} from "@/util/googleMapsRequests";
+import {initGoogleMaps} from "@/util/googleMaps";
 
 @withRouter
 @connect(
