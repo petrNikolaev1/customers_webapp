@@ -10,61 +10,68 @@ import Notification from '@/common/Notification'
 import Footer from "@/common/Footer";
 import {hideCreateOrder} from '@/actions/viewActions'
 import connect from "react-redux/es/connect/connect";
-import {apiReq} from '@/actions/serverActions'
+import {apiReq} from '@/actions/serverActions';
+import translate from '@/hocs/Translate';
 import Header from "../../common/Header";
 
-const pages = [
-    {title: 'Основная информация', forms: ['description', 'weight', 'worth']},
-    {title: 'Место отправления заказа', forms: ['origin']},
-    {title: 'Место доставки заказа', forms: ['destination']},
-    {title: 'Срок доставки заказа', forms: ['dueDate']},
-];
 
+
+
+@translate(CreateOrder)
 @connect(
     store => ({}), {hideCreateOrder, apiReq}
 )
 @showBeforeHOC('order-creation')
 export default class CreateOrder extends Component {
-    state = {
-        forms: {
-            description: {
-                data: {label: 'Описание'},
-                type: constants.STRING_INPUT,
-                notification: 'Неверно указано описание'
+    constructor(props) {
+        super(props);
+        const {strings} = props;
+        this.pages = [
+            {title: strings.INFO, forms: ['description', 'weight', 'worth']},
+            {title: strings.FROM, forms: ['origin']},
+            {title: strings.TO, forms: ['destination']},
+            {title: strings.TIME, forms: ['dueDate']},
+        ];
+        this.state = {
+            forms: {
+                description: {
+                    data: {label: strings.DESCRIPTION},
+                    type: constants.STRING_INPUT,
+                    notification: strings.WRONG_DESCRIPTION
+                },
+                worth: {
+                    data: {label: strings.VALUE},
+                    type: constants.AMOUNT_INPUT,
+                    notification: strings.WRONG_VALUE
+                },
+                weight: {
+                    data: {label: strings.WEIGHT},
+                    type: constants.WEIGHT_INPUT,
+                    notification: strings.WRONG_WEIGHT
+                },
+                origin: {
+                    data: {label: strings.FROM},
+                    type: constants.SELECT_LOCATION,
+                    notification: strings.WRONG_FROM,
+                    big: true
+                },
+                destination: {
+                    data: {label: strings.TO},
+                    type: constants.SELECT_LOCATION,
+                    notification: strings.WRONG_TO,
+                    big: true
+                },
+                dueDate: {
+                    data: {label: strings.DATE},
+                    type: constants.DATETIME,
+                    notification: strings.WRONG_DATE,
+                    labelClass: 'react-datetime-label-create-order'
+                },
             },
-            worth: {
-                data: {label: 'Ценность (usd)'},
-                type: constants.AMOUNT_INPUT,
-                notification: 'Неверно указана стоимость'
-            },
-            weight: {
-                data: {label: 'Вес (кг)'},
-                type: constants.WEIGHT_INPUT,
-                notification: 'Неверно указан вес'
-            },
-            origin: {
-                data: {label: 'Адрес отправления заказа'},
-                type: constants.SELECT_LOCATION,
-                notification: 'Пожалуйста, выберите точный адрес',
-                big: true
-            },
-            destination: {
-                data: {label: 'Адрес доставки заказа'},
-                type: constants.SELECT_LOCATION,
-                notification: 'Пожалуйста, выберите точный адрес',
-                big: true
-            },
-            dueDate: {
-                data: {label: 'Дата доставки заказа'},
-                type: constants.DATETIME,
-                notification: 'Пожалуйста, укажите корректную дату.\nМинимальный срок выполнения заказа - 4 часа',
-                labelClass: 'react-datetime-label-create-order'
-            },
-        },
-        currentPage: 1,
-        footerMounted: true,
+            currentPage: 1,
+            footerMounted: true,
+        };
     };
-
     mountFooter = () => {
         this.setState({footerMounted: true})
     };
@@ -146,7 +153,7 @@ export default class CreateOrder extends Component {
 
     getCurrentPageForms = () => {
         const {currentPage, forms} = this.state;
-        const currentFormsKeys = pages[currentPage - 1].forms;
+        const currentFormsKeys = this.pages[currentPage - 1].forms;
         return currentFormsKeys.reduce((res, cur) => (res[cur] = forms[cur], res), {})
     };
 
@@ -215,7 +222,7 @@ export default class CreateOrder extends Component {
     handleNextPage = () => {
         if (this.checkEmpty() || this.checkValid()) return;
         const {currentPage} = this.state;
-        if (currentPage > pages.length - 1) return;
+        if (currentPage > this.pages.length - 1) return;
         this.setState({currentPage: currentPage + 1})
     };
 
@@ -255,7 +262,7 @@ export default class CreateOrder extends Component {
     };
 
     render() {
-        const {hideCreateOrder, showBeforeClass} = this.props;
+        const {hideCreateOrder, showBeforeClass, strings} = this.props;
         const {currentPage, footerMounted} = this.state;
 
         const forms = this.getCurrentPageForms();
@@ -264,11 +271,11 @@ export default class CreateOrder extends Component {
 
         return (
             <div className={classNames("order-creation-container", showBeforeClass)}>
-                <Header label='Оформление заказа' onClose={hideCreateOrder}/>
+                <Header label={strings.FORMING} onClose={hideCreateOrder}/>
 
                 <div className='order-creation-container-page-header'>
                     <div className="order-creation-container-page-header-label">
-                        {pages[currentPage - 1].title}
+                        {this.pages[currentPage - 1].title}
                     </div>
                     {firstForm.big &&
                     <Notification
@@ -289,10 +296,10 @@ export default class CreateOrder extends Component {
                             {currentPage > 1 && <ChevronLeft className='arrow-icon'/>}
                         </div>
                         <div className='order-creation-container-nav-label'>
-                            {`${currentPage}/${pages.length}`}
+                            {`${currentPage}/${this.pages.length}`}
                         </div>
                         <div className='order-creation-container-nav-arrow' onClick={this.handleNextPage}>
-                            {currentPage < pages.length && <ChevronRight className='arrow-icon'/>}
+                            {currentPage < this.pages.length && <ChevronRight className='arrow-icon'/>}
                         </div>
                     </div>
                     <div className='order-creation-container-nav-right'/>
@@ -302,7 +309,7 @@ export default class CreateOrder extends Component {
                     mounted={this.footerEnabled()}
                     unmount={this.unmountFooter}
                     handleClick={this.onFooter}
-                    text="Оформить заказ"
+                    text={strings.FORM_ORDER}
                 />}
             </div>
 

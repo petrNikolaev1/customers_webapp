@@ -112,7 +112,23 @@ export default {
     },
 
     CreateOrder: {
-        CREATE_ORDER: 'Create order'
+        CREATE_ORDER: 'Create order',
+        DESCRIPTION: 'Description',
+        VALUE: 'Value (USD)',
+        WEIGHT: 'Weight (kg)',
+        FROM: 'Departure address',
+        TO: 'Destination address',
+        DATE: 'Delivery date',
+        WRONG_DESCRIPTION: 'Invalid description',
+        WRONG_VALUE: 'Invalid value',
+        WRONG_WEIGHT: 'Invalid weight',
+        WRONG_FROM: 'Please select an exact address',
+        WRONG_TO: 'Please select an exact address',
+        WRONG_DATE: 'Please enter a valid date\nMinimum delivery time - 4 hours',
+        TIME: 'Delivery time',
+        INFO: 'Main information',
+        FORM_ORDER: 'Place an order',
+        FORMING: 'Processing order'
     },
 
     CustomerRegistration:{

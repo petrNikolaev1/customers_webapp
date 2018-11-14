@@ -112,7 +112,23 @@ export default {
     },
 
     CreateOrder: {
-        CREATE_ORDER: 'Тапсырыс жасау'
+        CREATE_ORDER: 'Тапсырыс жасау',
+        DESCRIPTION: 'Сипаттама',
+        VALUE: 'Мәні (USD)',
+        WEIGHT: 'Салмақ (kg)',
+        FROM: 'Ұшу щещес',
+        TO: 'Жеткізу орны',
+        DATE: 'Жеткізілім уақыты',
+        WRONG_DESCRIPTION: 'Жарамсыз сипаттамасы',
+        WRONG_VALUE: 'Жарамсыз мән',
+        WRONG_WEIGHT: 'Жарамсыз салмақ',
+        WRONG_FROM: 'Нақты мекенжайды таңдаңыз',
+        WRONG_TO: 'Нақты мекенжайды таңдаңыз',
+        WRONG_DATE: 'Жарамды күні енгізіңіз \n Ең аз жеткізу мерзімі - 4 сағат',
+        TIME: 'Жеткізілім мерзімі',
+        INFO: 'Негізгі ақпарат',
+        FORM_ORDER: 'Тапсырыс орналастырыңыз',
+        FORMING: 'Өңдеу тәртібі'
     },
 
     CustomerRegistration:{

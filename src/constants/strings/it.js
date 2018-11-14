@@ -112,7 +112,24 @@ export default {
     },
 
     CreateOrder: {
-        CREATE_ORDER: 'Creare ordine'
+        CREATE_ORDER: 'Creare ordine',
+        DESCRIPTION: 'Descrizione',
+        VALUE: 'Valore (USD)',
+        WEIGHT: 'Peso (kg)',
+        FROM: 'Indirizzo di partenza',
+        TO: 'Indirizzo di destinazione',
+        DATE: 'Data di consegna',
+        WRONG_DESCRIPTION: 'Descrizione non valida',
+        WRONG_VALUE: 'Valore non valido',
+        WRONG_WEIGHT: 'Peso non valido',
+        WRONG_FROM: 'Si prega di selezionare un indirizzo esatto',
+        WRONG_TO: 'Si prega di selezionare un indirizzo esatto',
+        WRONG_DATE: 'Per favore, inserisci una data valida\nTempi minimi di consegna - 4 ore',
+        TIME: 'Tempo di consegna',
+        INFO: 'Informazione principale',
+        FORM_ORDER: 'Effettua un ordine',
+        FORMING: 'Ordine di elaborazione'
+
     },
 
     CustomerRegistration:{
