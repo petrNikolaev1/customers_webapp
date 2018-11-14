@@ -95,7 +95,7 @@ export const getCountryCity = address => {
 export const initGoogleMaps = (language = 'en') => {
     delete window.google;
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAbChC4mhcoyeibPK_o8rNHjjgVffObCdw&v=3.exp&libraries=geometry,drawing,places&language=${language}`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAbChC4mhcoyeibPK_o8rNHjjgVffObCdw&v=3.exp&libraries=geometry,drawing,places&language=${language === 'gb' ? 'en' : language}`;
     script.async = true;
     document.body.appendChild(script);
 };

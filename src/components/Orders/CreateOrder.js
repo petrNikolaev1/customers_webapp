@@ -15,9 +15,7 @@ import translate from '@/hocs/Translate';
 import Header from "../../common/Header";
 
 
-
-
-@translate(CreateOrder)
+@translate('CreateOrder')
 @connect(
     store => ({}), {hideCreateOrder, apiReq}
 )

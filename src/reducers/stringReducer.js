@@ -1,7 +1,7 @@
 import constants from '@/constants'
 import {selectedOptionToLang} from "@/util/lang.js";
 const initialState = {
-    language: 'ru'
+    language: 'gb'
 };
 
 export function stringReducer(state = initialState, action) {
